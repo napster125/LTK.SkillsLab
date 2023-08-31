@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Button, FormLabel, TextField, Typography } from "@mui/material";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 
-const BasicForm = () => {
+const TodoForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -55,4 +55,4 @@ const BasicForm = () => {
   );
 };
 
-export default BasicForm;
+export default TodoForm;
