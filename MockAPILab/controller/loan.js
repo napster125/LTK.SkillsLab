@@ -17,7 +17,7 @@ const addLoan = async (req, res) => {
 const getLoan = async (req, res) => {
   const loanId = req.params.loanId;
   try {
-    const loan = await LoanModel.find({ loanId });
+    const loan = await LoanModel.findOne({ loanId });
     res.status(201).json({ success: true, loan });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
