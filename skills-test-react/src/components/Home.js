@@ -18,7 +18,7 @@ const Home = () => {
       <Typography variant="h4" component="h4" gutterBottom>
         React Skills Test
       </Typography>
-      {todos.length && (
+      {todos.length > 0 && (
         <Button
           onClick={() => navigate("/todo-list")}
           sx={{ marginTop: "40px" }}

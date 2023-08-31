@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 import AccountMenu from "./components/AccountMenu";
 import BasicForm from "./components/TodoForm";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import TodoForm from "./components/TodoForm";
+import Home from "./components/Home";
 import TodoList from "./components/TodoList";
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
       <AccountMenu onClick={() => navigate("/todo")} />
 
       <Routes>
-        <Route path="/" element={<TodoForm />} />
+        <Route path="/" element={<Home />} />
         <Route path="/todo" element={<BasicForm />} />
         <Route path="/todo-list" element={<TodoList />} />
       </Routes>
