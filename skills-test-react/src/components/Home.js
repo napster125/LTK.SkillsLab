@@ -1,56 +1,30 @@
-import {
-  Box,
-  Button,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteTodo } from "../redux/todoSlice";
+import { Box, Button, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const todos = useSelector((state) => state.todos);
-  const dispatch = useDispatch();
-
-  const onDeleteTodo = (id) => () => {
-    dispatch(deleteTodo(id));
-  };
-
+  const navigate = useNavigate();
   return (
-    <Box sx={{ my: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
+    <Box
+      sx={{
+        my: 4,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Typography variant="h4" component="h4" gutterBottom>
         React Skills Test
       </Typography>
-      {todos.length > 0 && (
-        <>
-          <Typography variant="h4" component="h1" gutterBottom>
-            TODOs
-          </Typography>
-          <TableContainer>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Content</TableCell>
-                  <TableCell>-</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {todos.map((todo) => (
-                  <TableRow>
-                    <TableCell>{todo.content}</TableCell>
-                    <TableCell>
-                      <Button onClick={onDeleteTodo(todo.id)}>Delete</Button>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </>
+      {todos.length && (
+        <Button
+          onClick={() => navigate("/todo-list")}
+          sx={{ marginTop: "40px" }}
+        >
+          View Todos
+        </Button>
       )}
     </Box>
   );

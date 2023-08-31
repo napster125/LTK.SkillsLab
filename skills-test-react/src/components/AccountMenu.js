@@ -18,7 +18,14 @@ export default function AccountMenu({ onClick }) {
   };
   return (
     <React.Fragment>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          textAlign: "center",
+          justifyContent: "center",
+        }}
+      >
         <Typography sx={{ minWidth: 100 }}>Contact</Typography>
         <Typography sx={{ minWidth: 100 }}>Profile</Typography>
         <Tooltip title="Account Settings">
@@ -70,7 +77,7 @@ export default function AccountMenu({ onClick }) {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={onClick}>
-          <Avatar /> Open Form
+          <Avatar /> Add Todo
         </MenuItem>
       </Menu>
     </React.Fragment>
